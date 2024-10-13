@@ -52,6 +52,15 @@ nmap <leader>w :w!<cr>
 " (useful for handling the permission-denied error)
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
+" Use 'jk' to exit insertmode
+inoremap jk <esc>
+
+" Source the vimrc file immediately
+nnoremap <leader>` :source ~/.vimrc<cr>
+
+" Fix when sourcing vimrc, last search hl appears
+let @/=""
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -143,7 +152,7 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme desert
+    colorscheme gruvbox
 catch
 endtry
 
